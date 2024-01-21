@@ -312,8 +312,7 @@ class App {
 
   
     async handleEditClick(apiUrl, id, grid) {
-        const rowUpdate = grid.querySelector(`tr[data-id="${id}"]`);
-        rowUpdate.classList.add('blue-flash');
+       
 
         // Create the model popup structure
         const modal = document.createElement('div');
@@ -394,6 +393,8 @@ class App {
           const emailInput = document.getElementById('email'); 
           const statusOfVali=validateNameSize(nameInput) && validateEmailFormat(emailInput);
           if(statusOfVali){
+              const rowUpdate = grid.querySelector(`tr[data-id="${id}"]`);
+              rowUpdate.classList.add('blue-flash');
               try {
                 const formData = new FormData(document.getElementById('edit-form'));
                 const updatedData = {};
