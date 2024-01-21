@@ -195,6 +195,44 @@ class App {
             const avatarImage = insertModalContent.querySelector('.avatar');
             avatarImage.src = newImageUrl;
         });
+        //valdating
+        
+
+        function validateNameSize(nameInput) {
+          const nameValue = nameInput.value;
+          if (nameValue.length < 5 || nameValue.length > 20) {
+           alert('Name is not valid');
+           return false;
+            // ...
+          } else {
+            return true;
+            // ...
+          }
+        }
+        
+        function validateEmailFormat(emailInput) {
+          const emailValue = emailInput.value;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+          if (!emailRegex.test(emailValue)) {
+            alert('Email is not valid');
+            return false;
+            // ...
+          } else {
+            return true;
+          }
+        }
+        
+        // function validateForm(event) {
+        //   // Call individual validation functions here
+        //   validateNameSize();
+        //   validateEmailFormat();
+        
+        //   // If any validation fails, prevent form submission:
+        //   if (!formIsValid) {
+        //     event.preventDefault();
+        //   }
+        // }
+        
 
          // Add event listener for the close button
          const closeButton = insertModal.querySelector('.close-button');
@@ -204,6 +242,13 @@ class App {
          
 
          async function handleAddSubmit(apiUrl, grid, handleDeleteClick, handleEditClick) {
+          const nameInput = document.getElementById('name'); // Assuming name field ID is 'name'
+        const emailInput = document.getElementById('email'); // Assuming email field ID is 'email'
+          const statusOfVali=validateNameSize(nameInput) && validateEmailFormat(emailInput);
+          if(statusOfVali){
+            console.log(statusOfVali);
+          
+
           try {
 
             const formData = new FormData(document.getElementById('insert-form'));
@@ -353,7 +398,8 @@ class App {
             console.error('Error:', error);
             // Display an error message to the user
           }
-        }        
+        }  
+      }      
 
 
         console.log(grid);
@@ -432,7 +478,37 @@ class App {
           modal.remove(); // Remove the modal from the DOM
         });
 
+        //Validation
+        function validateNameSize(nameInput) {
+          const nameValue = nameInput.value;
+          if (nameValue.length < 5 || nameValue.length > 20) {
+           alert('Name is not valid');
+           return false;
+            // ...
+          } else {
+            return true;
+            // ...
+          }
+        }
+        
+        function validateEmailFormat(emailInput) {
+          const emailValue = emailInput.value;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+          if (!emailRegex.test(emailValue)) {
+            alert('Email is not valid');
+            return false;
+            // ...
+          } else {
+            return true;
+          }
+        }
+
         async function handleEditSubmit(apiUrl, id, grid) {
+          const nameInput = document.getElementById('name'); // Assuming name field ID is 'name'
+        const emailInput = document.getElementById('email'); // Assuming email field ID is 'email'
+          const statusOfVali=validateNameSize(nameInput) && validateEmailFormat(emailInput);
+          if(statusOfVali){
+            console.log(statusOfVali);
           try {
             // Get updated data from the form (assuming a form with the ID "edit-form")
             const formData = new FormData(document.getElementById('edit-form'));
@@ -488,6 +564,7 @@ class App {
             // Display an error message to the user
           }
         }
+      }
 
         
 
