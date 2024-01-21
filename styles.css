@@ -1,231 +1,213 @@
 body{
-    margin: 40px;
-    margin-top: 80px;
+  margin: 40px;
+  margin-top: 80px;
+}
   
+table {
+  border-collapse: collapse;
+  border-radius: 20px;
+  width: 100%;
+}
+
+table.empty {
+  display: none;
+}
+tr:nth-child(4n+1), tr:nth-child(4n+2) {
+  background-color: #f0f0f0; 
+}
+
+tr:nth-child(4n+3), tr:nth-child(4n) {
+  background-color: #e0e0e0; 
+}
+th, td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  
+}
+tr:hover {
+  background-color: lightblue;
+  color: #333;
+}
+.headerCell{
+  background-color: black;
+  color: white;
+}
+
+.action-cell{
+  display: flex;
+  height: 70px;
+}
+
+@media (max-width: 768px) {
+  .action-cell {
+    display: block;
+    height: 80px;
+    overflow: hidden;
   }
-  
-  table {
-      border-collapse: collapse;
-      border-radius: 20px;
-      width: 100%;
-    }
-  
-    table.empty {
-      display: none;
-    }
-    tr:nth-child(4n+1), tr:nth-child(4n+2) {
-      background-color: #f0f0f0; /* Adjust color as needed */
-    }
+  body{
+    margin-left: 0;
+    margin-right: 0;
+  }
     
-    /* Color for the next two rows, every fourth row after, etc. */
-    tr:nth-child(4n+3), tr:nth-child(4n) {
-      background-color: #e0e0e0; /* Adjust color as needed */
-    }
-    
-    /* Color for the next two rows, every third row after, etc. */
-   
-    
-    th, td {
-      padding: 8px;
-      text-align: center;
-      border: 1px solid #ddd;
-      
-    }
-    tr:hover {
-      background-color: lightblue;
-      color: #333;
-    }
-    .headerCell{
-      background-color: black;
-      color: white;
-    }
+}
+.header-title{
+    font-family: 'Caprasimo', serif;
+    font-family: 'Rubik Burned', system-ui;
+}
+table {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: black;
+}
   
-    .action-cell{
-      display: flex;
-      height: 70px;
-    }
+.image-cell img {
+  border-radius: 30px;
+  width: 50px; 
+  height: 50px; 
+  object-fit: cover; 
+}
+
+.edit-form {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.insert-form {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
   
-    @media (max-width: 768px) {
-      .action-cell {
-        display: block;
-        height: 80px;
-        overflow: hidden;
-      }
-      body{
-        margin-left: 0;
-        margin-right: 0;
-      }
-      
-    }
-    .header-title{
-        font-family: 'Caprasimo', serif;
-        font-family: 'Rubik Burned', system-ui;
-    }
-    table {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Adjust shadow size and opacity */
-    }
-    
-    th {
-      background-color: black;
-    }
-    
-     .image-cell img {
-      border-radius: 30px;
-      width: 50px; /* Adjust width as needed */
-      height: 50px; /* Adjust height as needed */
-      object-fit: cover; /* Maintain aspect ratio while covering the entire space */
-    }
+.avatar-container {
+  text-align: center;
+  height: 6rem;
+  margin-bottom: 10px;
+}
+.edit-avatar-container {
+  text-align: center;
+  height: 6rem;
+  margin-bottom: 10px;
+}
   
-    .edit-form {
-      padding: 10px;
-      border-radius: 10px;
-      /* background-color: antiquewhite; */
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      /* height:31rem; */
-    }
-    .insert-form {
-      padding: 10px;
-      border-radius: 10px;
-      /* background-color: antiquewhite; */
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .avatar-container {
-      text-align: center;
-      height: 6rem;
-      margin-bottom: 10px;
-    }
-    .edit-avatar-container {
-      text-align: center;
-      height: 6rem;
-      margin-bottom: 10px;
-    }
-    
-    .avatar {
-      width: 6rem;
-      height: 6rem;
-      border-radius: 50%;
-    }
-    .edit-avatar {
-      width: 6rem;
-      height: 6rem;
-      border-radius: 50%;
-    }
-    
-    .form-fields {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    
-    label {
-      font-weight: bold;
-      color: whitesmoke;
-    }
-    
-    input {
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      /* margin-left: 10px; */
-    }
+.avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+.edit-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
   
-    .edit-button-cont{
-      display: flex;
-      justify-content: center;
-    }
-    
-    .close-button {
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      width: 30%;
-      margin: 10px;
-      margin-top: 20px;
-  }
-  .submit-button {
-      margin: 10px;
-      margin-top: 20px;
-        width: 30%;
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  .modal {
-      padding: 10px;
-      display: none;
-      top: 0;
-      left: 0;
-      border-radius: 20px;
-      /* width: 100%;
-      height: 100vh; */
-      background-color: rgb(120, 116, 116);
-      width: 30%; /* Adjust width as needed */
-      height: 58%;
-      /* opacity: 1; */
-      /* visibility: hidden; */
-      /* transition: opacity 0.1s ease-in-out; */
-    }
-  
-  .addButton{
-      display: flex;
-      justify-content: flex-end;
-  }
-  
-  .btn-blue-custom:hover > * {
-    /* background-color: blue; Background color on hover */
-    color: white; /* Text and icon color on hover */
-    /* border-color: blue; Ensure border color matches */
-  }
-  
-  /* Ensure a transparent background by default */
-  .btn-blue-custom {
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-  .red-flash {
-    background-color: red;
-    animation: red-flash-animation 0.5s ease-in-out; /* Optional animation */
-  }
-  
-  @keyframes red-flash-animation {
-    0% { background-color: red; }
-    50% { background-color: transparent; }
-    100% { background-color: red; }
-  }
-  
-  .green-flash {
-    background-color: green;
-    animation: green-flash-animation 0.5s ease-in-out; /* Optional animation */
-  }
-  
-  @keyframes green-flash-animation {
-    0% { background-color: green; }
-    50% { background-color: transparent; }
-    100% { background-color: green; }
-  }
-  .blue-flash {
-    background-color: blue;
-    animation: blue-flash-animation 0.5s ease-in-out; /* Optional animation */
-  }
-  
-  @keyframes blue-flash-animation {
-    0% { background-color: blue; }
-    50% { background-color: transparent; }
-    100% { background-color: blue; }
-  }
-  
-  table td.actions-cell {
-    width: 150px; /* Adjust as needed */
-  }
+label {
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.edit-button-cont{
+  display: flex;
+  justify-content: center;
+}
+
+.close-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 30%;
+  margin: 10px;
+  margin-top: 20px;
+}
+.submit-button {
+  margin: 10px;
+  margin-top: 20px;
+    width: 30%;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.modal {
+  padding: 10px;
+  display: none;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  background-color: rgb(120, 116, 116);
+  width: 30%;
+  height: 58%;
+}
+
+.addButton{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-blue-custom:hover > * {
+  color: white; 
+}
+
+.btn-blue-custom {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.red-flash {
+  background-color: red;
+  animation: red-flash-animation 0.5s ease-in-out; 
+}
+
+@keyframes red-flash-animation {
+  0% { background-color: red; }
+  50% { background-color: transparent; }
+  100% { background-color: red; }
+}
+
+.green-flash {
+  background-color: green;
+  animation: green-flash-animation 0.5s ease-in-out;
+}
+
+@keyframes green-flash-animation {
+  0% { background-color: green; }
+  50% { background-color: transparent; }
+  100% { background-color: green; }
+}
+.blue-flash {
+  background-color: blue;
+  animation: blue-flash-animation 0.5s ease-in-out; 
+}
+
+@keyframes blue-flash-animation {
+  0% { background-color: blue; }
+  50% { background-color: transparent; }
+  100% { background-color: blue; }
+}
+
+table td.actions-cell {
+  width: 150px;
+}
